@@ -3,9 +3,7 @@
 name: Node.js Build
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
+  release:
     branches: [ main ]
     
 jobs:
@@ -24,4 +22,7 @@ jobs:
         with:
           name: package
           path: dist/*
-    
+      - name: Publish artifact to NPM
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_YULERB_EVENT_SOURCE_POST_CLASSIC }}
