@@ -23,3 +23,7 @@ jobs:
         with:
           name: package
           path: dist/*
+      - name: Publish artifact to NPM
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_YULERB_EVENT_SOURCE_POST_CLASSIC }}
