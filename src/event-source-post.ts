@@ -68,8 +68,8 @@ export class EventSourcePost{
 
 		this.xhr.open(this.opts.method || 'GET', this.url, true);
 
+		this.xhr.setRequestHeader('accept', 'text/event-stream');
 		if(this.opts.headers){
-			this.xhr.setRequestHeader('accept', 'text/event-stream');
 			for(let k in this.opts.headers){
 				this.xhr.setRequestHeader(k, this.opts.headers.get(k) ?? '');
 			}
