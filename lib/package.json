@@ -1,0 +1,53 @@
+{
+    "name": "eventsourcepost",
+    "version": "0.0.1",
+    "description": "EventSource client for tomcat rest posts api",
+    "keywords": [
+      "eventsource",
+      "http",
+      "streaming",
+      "sse",
+      "post"
+    ],
+    "homepage": "https://github.com/YulerB/npm-post-event-source",
+    "author": "Brian Yule <brian.yule@hotmail.com>",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/YulerB/npm-post-event-source.git"
+    },
+    "bugs": {
+      "url": "https://github.com/YulerB/npm-post-event-source/issues"
+    },
+    "directories": {
+      "lib": "./lib"
+    },
+    "main": "./lib/event-source-post",
+    "license": "GNU GENERAL PUBLIC LICENSE",
+    "licenses": [
+      {
+        "type": "GNU GENERAL PUBLIC LICENSE",
+        "url": "https://github.com/YulerB/npm-post-event-source/raw/master/LICENSE"
+      }
+    ],
+    "devDependencies": {
+        
+    },
+
+    "scripts": {
+    },
+    "engines": {
+      "node": ">=12.0.0"
+    },
+    "dependencies": {
+            "@angular/core" : "18.0.2"
+    },
+    "standard": {
+      "ignore": [
+        "example/example.js"
+      ],
+      "globals": [
+        "URL"
+      ]
+    }
+  }
+  
