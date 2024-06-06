@@ -3,12 +3,12 @@
 
 name: Node.js Build
 
-on: 
+on:
   push:
-    # only trigger on branches, not on tags
-    branches: '**'
-
-
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
