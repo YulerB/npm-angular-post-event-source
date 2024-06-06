@@ -85,6 +85,6 @@ export class EventSourcePost{
 		catch(e){
 
 		}
-		this.onclose.emit());
+		this.onclose.emit();
 	}
 }
