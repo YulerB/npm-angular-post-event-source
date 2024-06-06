@@ -3,7 +3,7 @@ npm-post-event-source
 
 [![Node.js Build](https://github.com/YulerB/npm-post-event-source/actions/workflows/npm-build-test.yml/badge.svg)](https://github.com/YulerB/npm-post-event-source/actions/workflows/npm-build-test.yml)
 
-
+'''
 import { DataModel } from "./data-model";
 import { Observable} from "rxjs";
 import {EventSourcePost} from "../src/event-source-post";
@@ -24,3 +24,4 @@ export class Service{
         });
     }
 }
+'''
