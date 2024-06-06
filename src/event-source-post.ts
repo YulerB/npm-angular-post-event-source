@@ -1,8 +1,8 @@
 import { EventSourceInit } from "./event-source-Init";
 import { EventSourcePostOptions } from "./event-source-post-options";
-import {EventEmitter } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
-export class EventSource2{
+export class EventSourcePost{
 	public onopen = new EventEmitter<Event>();
 	public onmessage = new EventEmitter<MessageEvent>();
 	public onclose = new EventEmitter<void>();
