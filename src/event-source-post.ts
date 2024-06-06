@@ -1,6 +1,7 @@
-import { EventSourceInit } from "./event-source-Init";
-import { EventSourcePostOptions } from "./event-source-post-options";
 import { EventEmitter } from '@angular/core';
+
+import { EventSourceInit } from "./event-source-init";
+import { EventSourcePostOptions } from "./event-source-post-options";
 
 export class EventSourcePost{
 	public onopen = new EventEmitter<Event>();
