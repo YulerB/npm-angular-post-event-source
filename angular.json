@@ -1,0 +1,70 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+      "eventsourcepost": {
+        "projectType": "application",
+        "schematics": {
+          "@schematics/angular:component": {
+            "style": "scss"
+          },
+          "@schematics/angular:application": {
+            "strict": true
+          }
+        },
+        "root": "",
+        "sourceRoot": "src/main/webapp",
+        "architect": {
+          "build": {
+            "builder": "@angular-builders/custom-webpack:browser",
+            "options": {
+              "outputPath": "dist/",
+              "scripts": []
+            },
+            "configurations": {
+              "production": {
+                "optimization": true,
+                "outputHashing": "all",
+                "sourceMap": false,
+                "namedChunks": false,
+                "extractLicenses": true,
+                "vendorChunk": false,
+                "buildOptimizer": true,
+                "serviceWorker": true,
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ]
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production"
+          }
+        }
+      }
+    },
+    "cli": {
+      "cache": {
+        "enabled": true,
+        "path": "./target/angular/",
+        "environment": "all"
+      },
+      "packageManager": "npm"
+    }
+  }
