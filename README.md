@@ -1,5 +1,5 @@
-# npm-post-event-source
-npm-post-event-source
+# npm-angular-post-event-source
+npm-angular-post-event-source
 
 [![Node.js Build](https://github.com/YulerB/npm-post-event-source/actions/workflows/npm-build-test.yml/badge.svg)](https://github.com/YulerB/npm-post-event-source/actions/workflows/npm-build-test.yml)
 [![CodeQL](https://github.com/YulerB/npm-post-event-source/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/YulerB/npm-post-event-source/actions/workflows/github-code-scanning/codeql)
