@@ -28,6 +28,6 @@ jobs:
         run: git config --global user.name "YulerB"  
       - run: npm version ${{ github.event.release.tag_name }}
       - name: Publish artifact to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_YULERB_EVENT_SOURCE_POST_CLASSIC }}
