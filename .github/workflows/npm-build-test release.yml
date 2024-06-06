@@ -22,6 +22,10 @@ jobs:
         with:
           name: package
           path: dist/*
+      - name: Update Email    
+        run: git config --global user.email "brian.yule@hotmail.com"
+      - name: Update Email    
+        run: git config --global user.name "YulerB"  
       - run: npm version ${{ github.event.release.tag_name }}
       - name: Publish artifact to NPM
         run: npm publish --access public --tag ${{ github.event.release.tag_name }}
