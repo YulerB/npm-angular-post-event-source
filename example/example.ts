@@ -18,7 +18,7 @@ export class Service{
             const closeListener = (close: Event)=>{
                 eventSource.removeOnMessageListener(messageListener);
                 eventSource.removeOnErrorListener(errorListener);
-                eventSource.addOnCloseListener(closeListener);
+                eventSource.removeOnCloseListener(closeListener);
             };
 
             let eventSource = new EventSourcePost(url, {method: 'POST', timeout: 200000, body: dataFilter});
