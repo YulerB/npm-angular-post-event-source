@@ -135,6 +135,6 @@ export class EventSourcePost extends EventTarget {
 		}
 		start = message.indexOf(':', start) + 1;
 		let data = message.slice(start, message.length);
-		this.dispatchMessage(new MessageEvent(this.type, {data: data});
+		this.dispatchMessage(new MessageEvent(this.type, {data: data}));
 	}
 }
