@@ -19,7 +19,8 @@
           "build": {
             "builder": "@angular-devkit/build-angular:browser",
             "options": {
-              "outputPath": "dist/",
+              "path": "index",
+              "outputPath": "dist/eventsourcepost",
               "scripts": []
             },
             "configurations": {
