@@ -3,7 +3,11 @@
 
 name: Node.js Build
 
-on: [push]
+on: 
+  push:
+    # only trigger on branches, not on tags
+    branches: '**'
+
 
 jobs:
   build:
