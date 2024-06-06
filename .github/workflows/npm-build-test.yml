@@ -18,3 +18,8 @@ jobs:
           node-version: 20
       - run: npm install
       - run: tsc
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: package
+          path: dist/*
