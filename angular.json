@@ -8,64 +8,95 @@
         "schematics": {
           "@schematics/angular:component": {
             "style": "scss"
-          },
-          "@schematics/angular:application": {
-            "strict": true
           }
         },
         "root": "",
-        "sourceRoot": "src/main/webapp",
+        "sourceRoot": "src",
+        "prefix": "app",
         "architect": {
           "build": {
-            "builder": "@angular-devkit/build-angular:browser",
+            "builder": "@angular-devkit/build-angular:application",
             "options": {
-              "path": "index",
               "outputPath": "dist/eventsourcepost",
+              "index": "src/index.html",
+              "browser": "src/main.ts",
+              "polyfills": [
+                "zone.js"
+              ],
+              "tsConfig": "tsconfig.app.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public"
+                }
+              ],
+              "styles": [
+                "src/styles.scss"
+              ],
               "scripts": []
             },
             "configurations": {
               "production": {
-                "optimization": true,
-                "outputHashing": "all",
-                "sourceMap": false,
-                "namedChunks": false,
-                "extractLicenses": true,
-                "vendorChunk": false,
-                "buildOptimizer": true,
-                "serviceWorker": true,
                 "budgets": [
                   {
                     "type": "initial",
-                    "maximumWarning": "500kb",
-                    "maximumError": "1mb"
+                    "maximumWarning": "500kB",
+                    "maximumError": "1MB"
                   },
                   {
                     "type": "anyComponentStyle",
-                    "maximumWarning": "2kb",
-                    "maximumError": "4kb"
+                    "maximumWarning": "2kB",
+                    "maximumError": "4kB"
                   }
-                ]
+                ],
+                "outputHashing": "all"
               },
               "development": {
-                "buildOptimizer": false,
                 "optimization": false,
-                "vendorChunk": true,
                 "extractLicenses": false,
-                "sourceMap": true,
-                "namedChunks": true
+                "sourceMap": true
               }
             },
             "defaultConfiguration": "production"
+          },
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+              "production": {
+                "buildTarget": "eventsourcepost:build:production"
+              },
+              "development": {
+                "buildTarget": "eventsourcepost:build:development"
+              }
+            },
+            "defaultConfiguration": "development"
+          },
+          "extract-i18n": {
+            "builder": "@angular-devkit/build-angular:extract-i18n"
+          },
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "polyfills": [
+                "zone.js",
+                "zone.js/testing"
+              ],
+              "tsConfig": "tsconfig.spec.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public"
+                }
+              ],
+              "styles": [
+                "src/styles.scss"
+              ],
+              "scripts": []
+            }
           }
         }
       }
-    },
-    "cli": {
-      "cache": {
-        "enabled": true,
-        "path": "./target/angular/",
-        "environment": "all"
-      },
-      "packageManager": "npm"
     }
   }
