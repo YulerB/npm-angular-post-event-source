@@ -2,10 +2,10 @@ import { EventSourceInit } from "./event-source-init";
 import { EventSourcePostOptions } from "./event-source-post-options";
 
 export class EventSourcePost extends EventTarget {
-	public onopen = new Event('onopen');
-	public onmessage = new Event('onmessage');
-	public onclose = new Event('onclose');
-	public onerror = new Event('onerror');
+	private onopen = new Event('onopen');
+	private onmessage = new Event('onmessage');
+	private onclose = new Event('onclose');
+	private onerror = new Event('onerror');
 	private xhr = new XMLHttpRequest();
 	public readyState: number = 1;
 	public type = 'data';
